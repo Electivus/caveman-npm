@@ -1,6 +1,6 @@
 {
   "name": "@electivus/caveman-runtime-win32-x64",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Electivus redistribution of the unmodified Caveman runtime for Windows x64. All six executables are bundled; installation makes no network requests.",
   "type": "module",
   "license": "SEE LICENSE IN LICENSE",

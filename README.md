@@ -16,7 +16,7 @@ Additional Use Grant; it is not relicensed as MIT.
 Requires Node.js 22.13 or newer. Run in PowerShell:
 
 ```powershell
-npm install -g @caveman-ai/cli@1.3.3 @electivus/caveman-runtime-win32-x64@1.1.6
+npm install -g @caveman-ai/cli@1.3.3 @electivus/caveman-runtime-win32-x64@1.1.7
 caveman setup --json
 ```
 
@@ -41,7 +41,7 @@ The official CLI already searches this directory. The executables are
 ### If npm lifecycle scripts are disabled
 
 ```powershell
-npm install -g --ignore-scripts @electivus/caveman-runtime-win32-x64@1.1.6
+npm install -g --ignore-scripts @electivus/caveman-runtime-win32-x64@1.1.7
 electivus-caveman-runtime install
 ```
 
@@ -59,13 +59,13 @@ provider traffic remain separate operations with their own network needs.
 On a machine with access to the npm registry:
 
 ```powershell
-npm pack @electivus/caveman-runtime-win32-x64@1.1.6
+npm pack @electivus/caveman-runtime-win32-x64@1.1.7
 ```
 
 Transfer the resulting `.tgz` through an approved channel, then:
 
 ```powershell
-npm install -g --offline --no-audit --no-fund .\electivus-caveman-runtime-win32-x64-1.1.6.tgz
+npm install -g --offline --no-audit --no-fund .\electivus-caveman-runtime-win32-x64-1.1.7.tgz
 ```
 
 The CLI must already be available for `caveman` commands. Neither the offline
