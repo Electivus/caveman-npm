@@ -20,6 +20,9 @@ Publication uses GitHub OIDC for this repository, `release.yml`, and the
 The publish job alone receives `id-token: write`; GitHub release creation uses
 a separate job with `contents: write`. Third-party Actions are pinned by full
 commit SHA. Pull requests never receive npm publishing permissions.
+CodeQL default setup scans JavaScript/TypeScript and Actions workflows; secret
+scanning, push protection, dependency alerts and private vulnerability reporting
+are enabled. GitHub maintains CodeQL's automatic scan schedule.
 
 `main` requires a pull request and the Windows verification check. Force pushes
 and branch/tag deletion are blocked by repository rules. Release tags must

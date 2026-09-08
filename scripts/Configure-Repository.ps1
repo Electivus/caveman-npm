@@ -20,6 +20,10 @@ Api PATCH $RepoPath @{
 Api PUT "$RepoPath/vulnerability-alerts" | Out-Null
 Api PUT "$RepoPath/automated-security-fixes" | Out-Null
 Api PUT "$RepoPath/private-vulnerability-reporting" | Out-Null
+$CodeQl = Api GET "$RepoPath/code-scanning/default-setup"
+if ($CodeQl.state -ne 'configured') {
+  Api PATCH "$RepoPath/code-scanning/default-setup" @{state='configured';languages=@('actions','javascript-typescript');query_suite='default'} | Out-Null
+}
 Api PUT "$RepoPath/actions/permissions/workflow" @{default_workflow_permissions='read';can_approve_pull_request_reviews=$false} | Out-Null
 Api PUT "$RepoPath/actions/permissions" @{enabled=$true;allowed_actions='selected';sha_pinning_required=$true} | Out-Null
 Api PUT "$RepoPath/actions/permissions/selected-actions" @{github_owned_allowed=$true;verified_allowed=$false;patterns_allowed=@()} | Out-Null
@@ -62,4 +66,4 @@ foreach ($Policy in $Policies.branch_policies) {
 if (-not @($Policies.branch_policies | Where-Object { $_.name -eq 'v*' -and $_.type -eq 'tag' }).Count) {
   Api POST "$RepoPath/environments/npm-publish/deployment-branch-policies" @{name='v*';type='tag'} | Out-Null
 }
-Write-Host "Configured ${Repository}: protected main and version tags; read-only Actions defaults; SHA-pinned GitHub-owned Actions; secret scanning and push protection; Dependabot alerts/fixes; private reporting; release approval by $ReleaseApprover."
+Write-Host "Configured ${Repository}: protected main and version tags; read-only Actions defaults; SHA-pinned GitHub-owned Actions; CodeQL; secret scanning and push protection; Dependabot alerts/fixes; private reporting; release approval by $ReleaseApprover."

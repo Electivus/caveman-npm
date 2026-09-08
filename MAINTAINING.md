@@ -5,7 +5,7 @@ repository carries the packaging, signed upstream metadata, licenses and tests.
 Executables and `.tgz` files are excluded from Git. Do not substitute a local
 build, modify executable bytes, or remove signature verification.
 
-## Reproduce 1.1.6
+## Reproduce 1.1.7
 
 Use a clone of `JuliusBrussee/caveman` or an unchanged fork that contains tag
 `bin-v1.1.6`, source revision `b36219e2b196869100df0d5c29bd57c50d9b906d`.
@@ -24,7 +24,7 @@ step; self-approval is permitted for that maintainer, and admin bypass is disabl
 npm test
 New-Item -ItemType Directory -Force .\dist | Out-Null
 .\scripts\Pack-Package.ps1
-.\scripts\Smoke-Package.ps1 -Tarball .\dist\electivus-caveman-runtime-win32-x64-1.1.6.tgz
+.\scripts\Smoke-Package.ps1 -Tarball .\dist\electivus-caveman-runtime-win32-x64-1.1.7.tgz
 ```
 
 The preparation script downloads official release assets on the maintainer
@@ -64,7 +64,7 @@ Configure npm trusted publishing once, as an organization package owner:
 npm whoami
 npm org ls electivus
 npm trust github @electivus/caveman-runtime-win32-x64 --repository Electivus/caveman-npm --file release.yml --environment npm-publish --allow-publish
-npm view @electivus/caveman-runtime-win32-x64@1.1.6 dist.integrity dist.tarball
+npm view @electivus/caveman-runtime-win32-x64@1.1.7 dist.integrity dist.tarball
 ```
 
 Finish npm's browser / two-factor confirmation if requested. Never put tokens,
@@ -84,7 +84,7 @@ The release workflow attaches the tarball to the corresponding GitHub release.
 
 ## Update policy
 
-Package `1.1.6` contains upstream `bin-v1.1.6`. For a new upstream binary release,
+Package `1.1.7` contains upstream `bin-v1.1.6`. For a new upstream binary release,
 review and update the tag and source revision in `lib/runtime.mjs` and
 `scripts/Prepare-Package.ps1`, the package version, and the README. The public key
 is pinned independently; any upstream key rotation needs explicit source review.

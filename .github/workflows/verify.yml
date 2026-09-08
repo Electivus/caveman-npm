@@ -46,7 +46,9 @@ jobs:
         run: npm install -g --ignore-scripts @caveman-ai/cli@1.3.3
       - name: Verify offline npm install and real runtime discovery
         shell: pwsh
-        run: ./scripts/Smoke-Package.ps1 -Tarball ./dist/electivus-caveman-runtime-win32-x64-1.1.6.tgz
+        run: |
+          $artifact = Get-Content ./dist/artifact.json -Raw | ConvertFrom-Json
+          ./scripts/Smoke-Package.ps1 -Tarball (Join-Path ./dist $artifact.filename)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: npm-tarball-windows-x64
