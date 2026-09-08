@@ -53,7 +53,12 @@ Api PUT "$RepoPath/environments/npm-publish" @{
   reviewers=@(@{type='User';id=$Approver.id})
   deployment_branch_policy=@{protected_branches=$false;custom_branch_policies=$true}
 } | Out-Null
-$Policies = Api GET "$RepoPath/environments/npm-publish/deployment-branch-policies"
+$Policies = Api GET "$RepoPath/environments/npm-publish/deployment-branch-policies?per_page=100"
+foreach ($Policy in $Policies.branch_policies) {
+  if ($Policy.name -ne 'v*' -or $Policy.type -ne 'tag') {
+    Api DELETE "$RepoPath/environments/npm-publish/deployment-branch-policies/$($Policy.id)" | Out-Null
+  }
+}
 if (-not @($Policies.branch_policies | Where-Object { $_.name -eq 'v*' -and $_.type -eq 'tag' }).Count) {
   Api POST "$RepoPath/environments/npm-publish/deployment-branch-policies" @{name='v*';type='tag'} | Out-Null
 }
