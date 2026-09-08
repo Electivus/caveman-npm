@@ -12,6 +12,13 @@ Use a clone of `JuliusBrussee/caveman` or an unchanged fork that contains tag
 Requires PowerShell 7.4+, Node.js 22.13+, npm, Git, and authenticated GitHub CLI.
 No Administrator access or Go compiler is required.
 
+Repository administrators can reproduce the GitHub protections with
+`./scripts/Configure-Repository.ps1`. The default release approver is
+`manoelcalixto`; pass `-ReleaseApprover` to nominate another maintainer. `main`
+requires PRs and passing CI, with zero mandatory peer approvals to support the
+current single-maintainer workflow. Deployment approval is a separate explicit
+step; self-approval is permitted for that maintainer, and admin bypass is disabled.
+
 ```powershell
 .\scripts\Prepare-Package.ps1 -SourceRepo C:\Users\you\git\caveman
 npm test

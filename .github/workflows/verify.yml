@@ -21,6 +21,15 @@ jobs:
       - name: Fetch pinned upstream source
         shell: pwsh
         run: git clone --depth 1 --branch bin-v1.1.6 https://github.com/JuliusBrussee/caveman.git "$env:RUNNER_TEMP/caveman-source"
+      - name: Validate PowerShell script syntax
+        shell: pwsh
+        run: |
+          foreach ($file in Get-ChildItem ./scripts/*.ps1) {
+            $errors = $null
+            $tokens = $null
+            [Management.Automation.Language.Parser]::ParseFile($file.FullName, [ref]$tokens, [ref]$errors) | Out-Null
+            if ($errors) { throw ($errors | Out-String) }
+          }
       - name: Prepare signed artifacts and third-party notices
         shell: pwsh
         env:

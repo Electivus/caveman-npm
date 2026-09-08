@@ -16,7 +16,7 @@ foreach ($Module in $Modules) {
   $Url = "https://proxy.golang.org/$Escaped/@v/$($Module.version).zip"
   if (-not (Test-Path -LiteralPath $ZipPath)) {
     $ZipPath = Join-Path $Cache (($Escaped.Replace('/','_')) + '@' + $Module.version + '.zip')
-    if (-not (Test-Path -LiteralPath $ZipPath)) { Invoke-WebRequest -Uri $Url -OutFile $ZipPath -TimeoutSec 300 }
+    if (-not (Test-Path -LiteralPath $ZipPath)) { Invoke-WebRequest -Uri $Url -OutFile $ZipPath -TimeoutSec 300 -MaximumRetryCount 3 -RetryIntervalSec 5 }
   }
   $Archive = [IO.Compression.ZipFile]::OpenRead($ZipPath)
   try {
@@ -52,6 +52,6 @@ foreach ($Module in $Modules) {
 $GoLicenseDir = Join-Path $PackageRoot 'licenses/go'
 New-Item -ItemType Directory -Path $GoLicenseDir -Force | Out-Null
 # Go's release-tagged source is read-only documentation, not a runtime dependency.
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/golang/go/refs/tags/$GoVersion/LICENSE" -OutFile (Join-Path $GoLicenseDir 'LICENSE') -TimeoutSec 60
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/golang/go/refs/tags/$GoVersion/LICENSE" -OutFile (Join-Path $GoLicenseDir 'LICENSE') -TimeoutSec 60 -MaximumRetryCount 3 -RetryIntervalSec 5
 $Utf8 = [Text.UTF8Encoding]::new($false)
 [IO.File]::WriteAllText((Join-Path $PackageRoot 'licenses/module-inventory.json'), (($Inventory | ConvertTo-Json -Depth 6) + "`n"), $Utf8)
