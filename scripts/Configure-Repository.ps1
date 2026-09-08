@@ -57,4 +57,4 @@ $Policies = Api GET "$RepoPath/environments/npm-publish/deployment-branch-polici
 if (-not @($Policies.branch_policies | Where-Object { $_.name -eq 'v*' -and $_.type -eq 'tag' }).Count) {
   Api POST "$RepoPath/environments/npm-publish/deployment-branch-policies" @{name='v*';type='tag'} | Out-Null
 }
-Write-Host "Configured $Repository: protected main and version tags; read-only Actions defaults; SHA-pinned GitHub-owned Actions; secret scanning and push protection; Dependabot alerts/fixes; private reporting; release approval by $ReleaseApprover."
+Write-Host "Configured ${Repository}: protected main and version tags; read-only Actions defaults; SHA-pinned GitHub-owned Actions; secret scanning and push protection; Dependabot alerts/fixes; private reporting; release approval by $ReleaseApprover."
