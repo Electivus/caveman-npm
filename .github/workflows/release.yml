@@ -1,0 +1,70 @@
+name: Publish verified npm release
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: npm-release
+  cancel-in-progress: false
+jobs:
+  release-policy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require a version tag on main
+        env:
+          RELEASE_REF: ${{ github.ref }}
+        run: |
+          node -e 'const p=require("./package.json");if(process.env.RELEASE_REF!==`refs/tags/v${p.version}`)throw new Error("Release ref must exactly match package version")'
+          git merge-base --is-ancestor HEAD origin/main
+  verify:
+    needs: release-policy
+    uses: ./.github/workflows/verify.yml
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: npm-publish
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          registry-url: https://registry.npmjs.org
+      - name: Use pinned npm with trusted publishing support
+        run: npm install --global npm@11.17.0 --ignore-scripts --no-audit --no-fund
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: npm-tarball-windows-x64
+          path: dist
+      - name: Verify artifact digest and tag before publishing
+        run: node scripts/check-artifact.mjs
+      - name: Publish exact Windows-tested tarball using OIDC
+        run: npm publish ./dist/*.tgz --access public --provenance --ignore-scripts
+      - name: Compare registry artifact integrity
+        run: node scripts/check-artifact.mjs --registry
+  github-release:
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: npm-tarball-windows-x64
+          path: dist
+      - name: Attach the published artifact to the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: gh release create "$RELEASE_TAG" dist/*.tgz dist/artifact.json --verify-tag --title "$RELEASE_TAG" --generate-notes

@@ -1,0 +1,98 @@
+{
+  "caveman-proxy": {
+    "goVersion": "go1.26.5",
+    "settings": {
+      "-buildmode": "exe",
+      "-compiler": "gc",
+      "-trimpath": "true",
+      "CGO_ENABLED": "0",
+      "GOARCH": "amd64",
+      "GOOS": "windows",
+      "GOAMD64": "v1",
+      "vcs": "git",
+      "vcs.revision": "b36219e2b196869100df0d5c29bd57c50d9b906d",
+      "vcs.time": "2026-09-04T00:18:53Z",
+      "vcs.modified": "false"
+    }
+  },
+  "caveman-engine": {
+    "goVersion": "go1.26.5",
+    "settings": {
+      "-buildmode": "exe",
+      "-compiler": "gc",
+      "-trimpath": "true",
+      "CGO_ENABLED": "0",
+      "GOARCH": "amd64",
+      "GOOS": "windows",
+      "GOAMD64": "v1",
+      "vcs": "git",
+      "vcs.revision": "b36219e2b196869100df0d5c29bd57c50d9b906d",
+      "vcs.time": "2026-09-04T00:18:53Z",
+      "vcs.modified": "false"
+    }
+  },
+  "caveman-mcp": {
+    "goVersion": "go1.26.5",
+    "settings": {
+      "-buildmode": "exe",
+      "-compiler": "gc",
+      "-trimpath": "true",
+      "CGO_ENABLED": "0",
+      "GOARCH": "amd64",
+      "GOOS": "windows",
+      "GOAMD64": "v1",
+      "vcs": "git",
+      "vcs.revision": "b36219e2b196869100df0d5c29bd57c50d9b906d",
+      "vcs.time": "2026-09-04T00:18:53Z",
+      "vcs.modified": "false"
+    }
+  },
+  "cavemem": {
+    "goVersion": "go1.26.5",
+    "settings": {
+      "-buildmode": "exe",
+      "-compiler": "gc",
+      "-trimpath": "true",
+      "CGO_ENABLED": "0",
+      "GOARCH": "amd64",
+      "GOOS": "windows",
+      "GOAMD64": "v1",
+      "vcs": "git",
+      "vcs.revision": "b36219e2b196869100df0d5c29bd57c50d9b906d",
+      "vcs.time": "2026-09-04T00:18:53Z",
+      "vcs.modified": "false"
+    }
+  },
+  "caveman-browse": {
+    "goVersion": "go1.26.5",
+    "settings": {
+      "-buildmode": "exe",
+      "-compiler": "gc",
+      "-trimpath": "true",
+      "CGO_ENABLED": "0",
+      "GOARCH": "amd64",
+      "GOOS": "windows",
+      "GOAMD64": "v1",
+      "vcs": "git",
+      "vcs.revision": "b36219e2b196869100df0d5c29bd57c50d9b906d",
+      "vcs.time": "2026-09-04T00:18:53Z",
+      "vcs.modified": "false"
+    }
+  },
+  "caveman-shrink": {
+    "goVersion": "go1.26.5",
+    "settings": {
+      "-buildmode": "exe",
+      "-compiler": "gc",
+      "-trimpath": "true",
+      "CGO_ENABLED": "0",
+      "GOARCH": "amd64",
+      "GOOS": "windows",
+      "GOAMD64": "v1",
+      "vcs": "git",
+      "vcs.revision": "b36219e2b196869100df0d5c29bd57c50d9b906d",
+      "vcs.time": "2026-09-04T00:18:53Z",
+      "vcs.modified": "false"
+    }
+  }
+}

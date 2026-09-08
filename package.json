@@ -1,0 +1,24 @@
+{
+  "name": "@electivus/caveman-runtime-win32-x64",
+  "version": "1.1.6",
+  "description": "Electivus redistribution of the unmodified Caveman runtime for Windows x64. All six executables are bundled; installation makes no network requests.",
+  "type": "module",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Electivus",
+  "repository": { "type": "git", "url": "git+https://github.com/Electivus/caveman-npm.git" },
+  "homepage": "https://github.com/Electivus/caveman-npm#readme",
+  "bugs": { "url": "https://github.com/Electivus/caveman-npm/issues" },
+  "os": ["win32"],
+  "cpu": ["x64"],
+  "engines": { "node": ">=22.13.0" },
+  "bin": { "electivus-caveman-runtime": "scripts/runtime.mjs" },
+  "files": ["bin/*.exe", "lib/", "scripts/runtime.mjs", "upstream/", "licenses/", "LICENSE", "README.md", "MAINTAINING.md"],
+  "scripts": {
+    "postinstall": "node scripts/runtime.mjs install",
+    "verify": "node scripts/runtime.mjs verify",
+    "test": "node --test tests/*.test.mjs",
+    "prepack": "npm run verify"
+  },
+  "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" },
+  "keywords": ["caveman", "windows", "binaries", "offline", "electivus"]
+}

@@ -1,0 +1,112 @@
+[
+  {
+    "name": "github.com/chromedp/cdproto",
+    "version": "v0.0.0-20260321001828-e3e3800016bc",
+    "sum": "h1:wkN/LMi5vc60pBRWx6qpbk/aEvq3/ZVNpnMvsw8PVVU="
+  },
+  {
+    "name": "github.com/chromedp/chromedp",
+    "version": "v0.15.1",
+    "sum": "h1:EJWiPm7BNqDqjYy6U0lTSL5wNH+iNt9GjC3a4gfjNyQ="
+  },
+  {
+    "name": "github.com/chromedp/sysutil",
+    "version": "v1.1.0",
+    "sum": "h1:PUFNv5EcprjqXZD9nJb9b/c9ibAbxiYo4exNWZyipwM="
+  },
+  {
+    "name": "github.com/dlclark/regexp2/v2",
+    "version": "v2.1.0",
+    "sum": "h1:jHXRmHRZGbuQzDZjMlCAXOvQb75iv3HyLDzXGj5H1AY="
+  },
+  {
+    "name": "github.com/dustin/go-humanize",
+    "version": "v1.0.1",
+    "sum": "h1:GzkhY7T5VNhEkwH0PVJgjz+fX1rhBrR7pRT3mDkpeCY="
+  },
+  {
+    "name": "github.com/go-json-experiment/json",
+    "version": "v0.0.0-20260214004413-d219187c3433",
+    "sum": "h1:vymEbVwYFP/L05h5TKQxvkXoKxNvTpjxYKdF1Nlwuao="
+  },
+  {
+    "name": "github.com/gobwas/httphead",
+    "version": "v0.1.0",
+    "sum": "h1:exrUm0f4YX0L7EBwZHuCF4GDp8aJfVeBrlLQrs6NqWU="
+  },
+  {
+    "name": "github.com/gobwas/pool",
+    "version": "v0.2.1",
+    "sum": "h1:xfeeEhW7pwmX8nuLVlqbzVc7udMDrwetjEv+TZIz1og="
+  },
+  {
+    "name": "github.com/gobwas/ws",
+    "version": "v1.4.0",
+    "sum": "h1:CTaoG1tojrh4ucGPcoJFiAQUAsEWekEWvLy7GsVNqGs="
+  },
+  {
+    "name": "github.com/klauspost/compress",
+    "version": "v1.18.6",
+    "sum": "h1:2jupLlAwFm95+YDR+NwD2MEfFO9d4z4Prjl1XXDjuao="
+  },
+  {
+    "name": "github.com/mattn/go-isatty",
+    "version": "v0.0.20",
+    "sum": "h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWEY="
+  },
+  {
+    "name": "github.com/Microsoft/go-winio",
+    "version": "v0.6.2",
+    "sum": "h1:F2VQgta7ecxGYO8k3ZZz3RS8fVIXVxONVUPlNERoyfY="
+  },
+  {
+    "name": "github.com/ncruces/go-strftime",
+    "version": "v1.0.0",
+    "sum": "h1:HMFp8mLCTPp341M/ZnA4qaf7ZlsbTc+miZjCLOFAw7w="
+  },
+  {
+    "name": "github.com/remyoudompheng/bigfft",
+    "version": "v0.0.0-20230129092748-24d4a6f8daec",
+    "sum": "h1:W09IVJc94icq4NjY3clb7Lk8O1qJ8BdBEF8z0ibU0rE="
+  },
+  {
+    "name": "github.com/tiktoken-go/tokenizer",
+    "version": "v0.8.0",
+    "sum": "h1:drHWno2Zx3eAm/hk/LmvBKXPpSImB7BRyh/ru4+3Q7Y="
+  },
+  {
+    "name": "golang.org/x/net",
+    "version": "v0.55.0",
+    "sum": "h1:bcvxaJn3e1U6InsFWt1JUq1aSjnRxLzT2rtD2KfkDF8="
+  },
+  {
+    "name": "golang.org/x/sys",
+    "version": "v0.46.0",
+    "sum": "h1:noSf2Fq6F8DBgS+LysIkx7rIExoNHJsxOAtPp4rthXw="
+  },
+  {
+    "name": "gopkg.in/yaml.v3",
+    "version": "v3.0.1",
+    "sum": "h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA="
+  },
+  {
+    "name": "modernc.org/libc",
+    "version": "v1.73.4",
+    "sum": "h1:+ra4Ui8ngyt8HDcO1FTDPWlkAh6yOdaO2yAoh8MddQA="
+  },
+  {
+    "name": "modernc.org/mathutil",
+    "version": "v1.7.1",
+    "sum": "h1:GCZVGXdaN8gTqB1Mf/usp1Y/hSqgI2vAGGP4jZMCxOU="
+  },
+  {
+    "name": "modernc.org/memory",
+    "version": "v1.11.0",
+    "sum": "h1:o4QC8aMQzmcwCK3t3Ux/ZHmwFPzE6hf2Y5LbkRs+hbI="
+  },
+  {
+    "name": "modernc.org/sqlite",
+    "version": "v1.53.0",
+    "sum": "h1:20WG8N9q4ji/dEqGk4uiI0c6OPjSeLTNYGFCc3+7c1M="
+  }
+]

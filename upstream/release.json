@@ -1,0 +1,57 @@
+{
+  "repository": "https://github.com/JuliusBrussee/caveman",
+  "release": "bin-v1.1.6",
+  "sourceRevision": "b36219e2b196869100df0d5c29bd57c50d9b906d",
+  "publishedAt": "2026-09-04T00:23:53Z",
+  "url": "https://github.com/JuliusBrussee/caveman/releases/tag/bin-v1.1.6",
+  "assets": [
+    {
+      "name": "caveman-browse_win32_amd64",
+      "size": 33602560,
+      "digest": "sha256:2332c27e247455c963adffcf553f93cbf29ffca965f2b5be50eb06b3d2171584",
+      "browser_download_url": "https://github.com/JuliusBrussee/caveman/releases/download/bin-v1.1.6/caveman-browse_win32_amd64"
+    },
+    {
+      "name": "caveman-engine_win32_amd64",
+      "size": 27720192,
+      "digest": "sha256:0eb16918c209a4d49cc65b5cb9e13c08f0e6aaabce8d071592e8eb9adae2daea",
+      "browser_download_url": "https://github.com/JuliusBrussee/caveman/releases/download/bin-v1.1.6/caveman-engine_win32_amd64"
+    },
+    {
+      "name": "caveman-mcp_win32_amd64",
+      "size": 25640960,
+      "digest": "sha256:6258791b1f85717c7577e730c6ed277ae7d8d15505a0213d3b6e17d694919f7d",
+      "browser_download_url": "https://github.com/JuliusBrussee/caveman/releases/download/bin-v1.1.6/caveman-mcp_win32_amd64"
+    },
+    {
+      "name": "caveman-proxy_win32_amd64",
+      "size": 39726080,
+      "digest": "sha256:e1e7ce5c0ba7e3f264b0f38cd8f5ed662c1a264eb76b8c96502108d5f5feff7d",
+      "browser_download_url": "https://github.com/JuliusBrussee/caveman/releases/download/bin-v1.1.6/caveman-proxy_win32_amd64"
+    },
+    {
+      "name": "caveman-shrink_win32_amd64",
+      "size": 25394688,
+      "digest": "sha256:5fe6735b180ba8bc3008821374314410255dd53e93bc834d1ac8e401891618cb",
+      "browser_download_url": "https://github.com/JuliusBrussee/caveman/releases/download/bin-v1.1.6/caveman-shrink_win32_amd64"
+    },
+    {
+      "name": "cavemem_win32_amd64",
+      "size": 25703424,
+      "digest": "sha256:c1ab3fffd313237530759753dda88f807bd48bac8aa6b104a6027c7f65fb2b85",
+      "browser_download_url": "https://github.com/JuliusBrussee/caveman/releases/download/bin-v1.1.6/cavemem_win32_amd64"
+    },
+    {
+      "name": "checksums.txt",
+      "size": 3294,
+      "digest": "sha256:cf50541090ef05ff29ab4e3107a97403913254635281439bf37edc1ce26e6c8e",
+      "browser_download_url": "https://github.com/JuliusBrussee/caveman/releases/download/bin-v1.1.6/checksums.txt"
+    },
+    {
+      "name": "checksums.txt.keysig",
+      "size": 291,
+      "digest": "sha256:725e1335fdd8341f5b9164c6bb8e8280518336f3d3aa6aac50505f99d22c23c5",
+      "browser_download_url": "https://github.com/JuliusBrussee/caveman/releases/download/bin-v1.1.6/checksums.txt.keysig"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.exe binary
+upstream/checksums.txt -text
+upstream/checksums.txt.keysig -text
+# Preserve the exact original third-party notice files, including whitespace.
+licenses/** -text -whitespace
