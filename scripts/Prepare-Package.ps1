@@ -36,11 +36,11 @@ foreach ($Asset in $SelectedAssets) {
     if ($BinaryDirectory) {
       Copy-Item -LiteralPath (Join-Path $BinaryDirectory $Filename) -Destination $Destination
     } else {
-      Invoke-WebRequest -Uri $Asset.browser_download_url -OutFile $Destination -TimeoutSec 300
+      Invoke-WebRequest -Uri $Asset.browser_download_url -OutFile $Destination -TimeoutSec 300 -MaximumRetryCount 3 -RetryIntervalSec 5
     }
   } else {
     $Destination = Join-Path $PackageRoot "upstream/$($Asset.name)"
-    Invoke-WebRequest -Uri $Asset.browser_download_url -OutFile $Destination -TimeoutSec 60
+    Invoke-WebRequest -Uri $Asset.browser_download_url -OutFile $Destination -TimeoutSec 60 -MaximumRetryCount 3 -RetryIntervalSec 5
   }
   $Actual = 'sha256:' + (Get-FileHash -LiteralPath $Destination -Algorithm SHA256).Hash.ToLowerInvariant()
   if ($Actual -ne $Asset.digest) { throw "GitHub asset digest mismatch: $($Asset.name)" }
